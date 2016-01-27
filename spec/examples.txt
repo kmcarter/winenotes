@@ -1,3 +1,4 @@
 example_id                              | status | run_time        |
 --------------------------------------- | ------ | --------------- |
-./spec/features/list_notes_spec.rb[1:1] | passed | 0.20804 seconds |
+./spec/features/list_notes_spec.rb[1:1] | passed | 0.21686 seconds |
+./spec/features/list_notes_spec.rb[2:1] | passed | 0.01674 seconds |
