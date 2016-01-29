@@ -11,9 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160129041630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "notes", force: :cascade do |t|
+    t.integer  "rating"
+    t.text     "tasting_notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "wines", force: :cascade do |t|
+    t.string   "name"
+    t.string   "varietal"
+    t.integer  "year"
+    t.string   "vinyard"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
