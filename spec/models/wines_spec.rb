@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Wine', type: :model do
-    before(:each) do
-        @wine1 = Wine.new(name: 'Rasmussen', varietal: 'Chardonnay', year: 2014, vinyard: 'Steve Rasmussen Santa Barbara')
+    before(:all) do
+        @wine1 = FactoryGirl.build(:wine)
+    end
+    
+    it 'has a valid factory' do
+        expect(@wine1).to be_valid
     end
     
     it 'should have a name field' do
