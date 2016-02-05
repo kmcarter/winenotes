@@ -16,4 +16,16 @@ RSpec.feature 'Creating a new note', type: :feature do
         expect(page).to have_content('This wine was great')
         expect(page).to have_content('Note successfully created.')
     end
+    
+    # scenario 'fails if the rating is not provided' do
+    #     visit '/notes'
+    #     click_link 'New Note'
+        
+    #     expect(current_url).to eq(new_note_url)
+        
+    #     click_button 'Create Note'
+        
+    #     expect(current_path).to eq(new_note_path)
+    #     expect(page).to have_content('error')
+    # end
 end
