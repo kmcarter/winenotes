@@ -1,4 +1,6 @@
 class WinesController < ApplicationController
+    before_action :set_wine, only: [:show, :edit, :update]
+    
     def index
         @wines = Wine.all
     end
@@ -15,12 +17,26 @@ class WinesController < ApplicationController
     end
     
     def show
-        @wine = Wine.find(params[:id])
         @notes = @wine.notes.all
+    end
+    
+    def edit
+    end
+    
+    def update
+        if @wine.update(wine_params)
+            redirect_to @wine, notice: 'Wine successfully updated.'
+        else
+            render :edit
+        end
     end
     
     private
     def wine_params
         params.require(:wine).permit(:name, :varietal, :year, :vinyard)
+    end
+    
+    def set_wine
+        @wine = Wine.find(params[:id])
     end
 end

@@ -12,7 +12,6 @@ RSpec.feature 'Listing all of a wine\'s notes', type: :feature do
         wine = Wine.all.sample
         visit wine_url(wine)
         expect(current_url).to eq(wine_url(wine))
-        #TODO: figure out how to use pluralize
-        expect(page).to have_content("#{wine.notes.count} notes")
+        expect(page).to have_content("#{"note".pluralize(wine.notes.count)}")
     end
 end

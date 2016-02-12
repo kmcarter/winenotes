@@ -6,14 +6,16 @@
         <th>Varietal</th>
         <th>Year</th>
         <th>Vinyard</th>
+        <th></th>
     </thead>
     <tbody>
         <% @wines.each do |w| %>
         <tr>
-            <td><%= w.name %></td>
+            <td><%= link_to(w.name, wine_path(w)) %></td>
             <td><%= w.varietal %></td>
             <td><%= w.year %></td>
             <td><%= w.vinyard %></td>
+            <td><%= link_to('Edit', edit_wine_path(w)) %></td>
         </tr>
         <% end %>
     </tbody>

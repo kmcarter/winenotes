@@ -14,7 +14,7 @@ RSpec.feature 'Creating a new note', type: :feature do
         fill_in 'note_tasting_notes', with: 'This wine was great'
         click_button 'Create Note'
         
-        expect(current_path).to eq(wine_note_path(wine, Note.last))
+        expect(current_path).to eq(wine_path(wine))
         expect(page).to have_content('This wine was great')
         expect(page).to have_content('Note successfully created.')
     end

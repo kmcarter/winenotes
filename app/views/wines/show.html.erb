@@ -8,15 +8,18 @@
     <thead>
         <th>Rating</th>
         <th>Notes</th>
+        <th></th>
     </thead>
     <tbody>
         <% @notes.each do |n| %>
         <tr>
             <td><%= n.rating %></td>
             <td><%= n.tasting_notes %></td>
+            <td><%= link_to('Edit', edit_wine_note_url(@wine, n)) %></td>
         </tr>
         <% end %>
     </tbody>
 </table>
 
+<p><%= link_to('Edit Wine', edit_wine_path(@wine)) %></p>
 <p><%= link_to('Add Note', new_wine_note_path(@wine)) %></p>
