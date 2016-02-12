@@ -2,3 +2,5 @@
 <%= content_tag(:p, @wine.varietal) %>
 <%= content_tag(:p, @wine.year) %>
 <%= content_tag(:p, @wine.vinyard) %>
+
+<p><%= link_to('Add Note', new_wine_note_path(@wine)) %></p>

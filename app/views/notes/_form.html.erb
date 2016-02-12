@@ -1,4 +1,4 @@
-<%= form_for @note do |f| %>
+<%= form_for([@wine, @note]) do |f| %>
     <%= render 'shared/errors', object: @note %>
     <div class="field">
         <%= f.label :rating %>
