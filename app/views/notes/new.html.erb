@@ -1,15 +1,3 @@
 <h1>Create a Note</h1>
 
-<%= form_for @note do |f| %>
-    <div class="field">
-        <%= f.label :rating %>
-        <%= f.range_field :rating, in: 0..5 %>
-    </div>
-    <div class="field">
-        <%= f.label :tasting_notes %>
-        <%= f.text_area :tasting_notes %>
-    </div>
-    <div class="actions">
-        <%= f.submit "Create Note" %>
-    </div>
-<% end %>
+<%= render 'form' %>

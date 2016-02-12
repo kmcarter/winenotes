@@ -1,0 +1,23 @@
+<%= form_for @wine do |f| %>
+    <%= render 'shared/errors', object: @wine %>
+    <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    <div class="field">
+        <%= f.label :varietal %>
+        <%= f.select :varietal, ['Shiraz', 'Shirah', 'Chardonnay', 'Pinot Noir', 'Cabernet Sauvignon', 
+        'White Zinfindel', 'Sauvignon Blanc', 'Riesling', 'Moscato', 'Merlot', 'Zinfindel', 'Malbec'] %>
+    </div>
+    <div class="field">
+        <%= f.label :year %>
+        <%= f.select :year, (1900..2016).to_a %>
+    </div>
+    <div class="field">
+        <%= f.label :vinyard %>
+        <%= f.text_field :vinyard %>
+    </div>
+    <div class="actions">
+        <%= f.submit "Create Wine" %>
+    </div>
+<% end %>
