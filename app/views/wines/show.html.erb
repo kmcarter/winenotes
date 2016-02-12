@@ -3,4 +3,20 @@
 <%= content_tag(:p, @wine.year) %>
 <%= content_tag(:p, @wine.vinyard) %>
 
+<h2><%= "#{pluralize(@notes.count, "note")}" %></h2>
+<table>
+    <thead>
+        <th>Rating</th>
+        <th>Notes</th>
+    </thead>
+    <tbody>
+        <% @notes.each do |n| %>
+        <tr>
+            <td><%= n.rating %></td>
+            <td><%= n.tasting_notes %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
 <p><%= link_to('Add Note', new_wine_note_path(@wine)) %></p>
