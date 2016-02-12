@@ -12,5 +12,6 @@ RSpec.feature 'Listing all wines', type: :feature do
         visit '/'
         click_link 'Wines'
         expect(current_url).to eq(wines_url)
+        expect(page).to have_content("#{"wine".pluralize(Wine.all.count)}")
     end
 end
