@@ -6,8 +6,7 @@
     </div>
     <div class="field">
         <%= f.label :varietal %>
-        <%= f.select :varietal, ['Shiraz', 'Shirah', 'Chardonnay', 'Pinot Noir', 'Cabernet Sauvignon', 
-        'White Zinfindel', 'Sauvignon Blanc', 'Riesling', 'Moscato', 'Merlot', 'Zinfindel', 'Malbec'] %>
+        <%= f.select :varietal, WinesController::VARIETALS %>
     </div>
     <div class="field">
         <%= f.label :year %>

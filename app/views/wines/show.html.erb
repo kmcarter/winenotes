@@ -21,5 +21,8 @@
     </tbody>
 </table>
 
-<p><%= link_to('Edit Wine', edit_wine_path(@wine)) %></p>
-<p><%= link_to('Add Note', new_wine_note_path(@wine)) %></p>
+<ul>
+    <li><%= link_to('Edit Wine', edit_wine_path(@wine)) %></li>
+    <li><%= link_to('Add Note', new_wine_note_path(@wine)) %></li>
+    <li><%= link_to('Back to Wines', wines_path) %></li>
+</ul>

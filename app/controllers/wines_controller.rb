@@ -1,5 +1,9 @@
 class WinesController < ApplicationController
     before_action :set_wine, only: [:show, :edit, :update]
+    #TODO: convert varietals into enum? Or database table?
+    VARIETALS = ['Shiraz', 'Shirah', 'Chardonnay', 'Pinot Noir', 'Cabernet Sauvignon', 
+        'White Zinfindel', 'Sauvignon Blanc', 'Riesling', 'Moscato', 'Merlot', 'Zinfindel', 
+        'Malbec', 'White Blend', 'Red Blend']
     
     def index
         @wines = Wine.all
