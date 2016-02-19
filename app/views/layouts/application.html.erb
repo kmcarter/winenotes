@@ -7,9 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <% if current_user %>
+      Signed in as <%= current_user.email %>
+      <%= link_to 'Sign Out', sign_out_path %>
+    <% end %>
+  </header>
 
-<%= render 'layouts/messages' %>
-<%= yield %>
+  <%= render 'layouts/messages' %>
+  <%= yield %>
 
 </body>
 </html>
