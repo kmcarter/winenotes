@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Listing all wines', type: :feature do
     scenario 'returns a message when there are no wines to view' do
+        Wine.destroy_all
         visit '/'
         click_link 'Wines'
         expect(page.current_url).to eq(wines_url)

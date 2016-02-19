@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Listing all of a wine\'s notes', type: :feature do
     scenario 'returns a message when there are no notes to view' do
+        Wine.destroy_all
         wine = FactoryGirl.create(:wine)
         visit wine_url(wine)
         expect(current_url).to eq(wine_url(wine))
