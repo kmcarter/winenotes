@@ -11,6 +11,8 @@
     <% if current_user %>
       Signed in as <%= current_user.email %>
       <%= link_to 'Sign Out', sign_out_path %>
+    <% elsif %>
+      <%= link_to 'Sign In', sign_in_path %>
     <% end %>
   </header>
 

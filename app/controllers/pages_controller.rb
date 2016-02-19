@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-    
-    def landing
-    end
+  skip_before_action :authorize, only: [:landing]
+  
+  def landing
+  end
 end
