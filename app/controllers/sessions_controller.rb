@@ -2,17 +2,12 @@ class SessionsController < ApplicationController
   skip_before_action :authorize
   
   def new
+    flash.now[:alert] = warden.message if warden.message.present?
   end
   
   def create
-    user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to root_path, notice: "Logged in!"
-    else
-      flash.now[:alert] = "Email or password is invalid."
-      render :new
-    end
+    warden.authenticate!
+    redirect_to root_url, notice: "Logged in!"
   end
   
   def destroy

@@ -64,7 +64,7 @@ RSpec.feature 'Editing a user', type: :feature do
   end
   
   scenario 'fails to update the user if the email is not unique' do
-    existing_user = FactoryGirl.create(:user, email: 'test@test.com') unless User.where(email: 'test@test.com')
+    existing_user = FactoryGirl.create(:user, email: 'test@test.com')
     user = FactoryGirl.create(:user)
     
     visit user_url(user)

@@ -26,6 +26,7 @@ gem 'puma'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 gem 'email_validator'
+gem 'warden'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

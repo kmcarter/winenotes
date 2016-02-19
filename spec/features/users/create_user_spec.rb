@@ -7,6 +7,7 @@ RSpec.feature 'Creating a new user', type: :feature do
   end
   
   scenario 'succeeds with valid values' do 
+    User.where(email: 'test@test.com').delete_all
     visit '/users'
     click_link 'New User' 
     

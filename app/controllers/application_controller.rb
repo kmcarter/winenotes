@@ -6,11 +6,15 @@ class ApplicationController < ActionController::Base
   
   private
     def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+      warden.user
     end
     helper_method :current_user
     
     def authorize
       redirect_to sign_in_url, alert: "You must be signed in to use this application." if current_user.nil?
+    end
+    
+    def warden
+      env['warden']
     end
 end
