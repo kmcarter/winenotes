@@ -1,24 +1,24 @@
 <p><%= "#{pluralize(@wines.count, "wine")}" %></p>
 
-<table>
-    <thead>
-        <th>Name</th>
-        <th>Varietal</th>
-        <th>Year</th>
-        <th>Vinyard</th>
-        <th></th>
-    </thead>
-    <tbody>
-        <% @wines.each do |w| %>
-        <tr>
-            <td><%= link_to(w.name, wine_path(w)) %></td>
-            <td><%= w.varietal %></td>
-            <td><%= w.year %></td>
-            <td><%= w.vinyard %></td>
-            <td><%= link_to('Edit', edit_wine_path(w)) %></td>
-        </tr>
-        <% end %>
-    </tbody>
+<table id="wines">
+  <thead>
+    <th>Name</th>
+    <th>Varietal</th>
+    <th>Year</th>
+    <th>Vinyard</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @wines.each do |w| %>
+    <tr>
+      <td><%= link_to(w.name, wine_path(w)) %></td>
+      <td><%= w.varietal %></td>
+      <td><%= w.year %></td>
+      <td><%= w.vinyard %></td>
+      <td><%= link_to('Edit', edit_wine_path(w)) %></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <%= link_to('New Wine', new_wine_path) %>
