@@ -1,23 +1,19 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Winenotes</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <header>
-    <% if current_user %>
-      Signed in as <%= current_user.email %>
-      <%= link_to 'Sign Out', sign_out_path %>
-    <% elsif %>
-      <%= link_to 'Sign In', sign_in_path %>
-    <% end %>
-  </header>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <%= render 'layouts/messages' %>
-  <%= yield %>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+    <%= yield %>
+
+  </body>
 </html>
