@@ -6,6 +6,7 @@
 <h2><%= "#{pluralize(@notes.count, "note")}" %></h2>
 <table>
     <thead>
+        <th>Author</th>
         <th>Rating</th>
         <th>Notes</th>
         <th></th>
@@ -13,16 +14,17 @@
     <tbody>
         <% @notes.each do |n| %>
         <tr>
+            <td><%= link_to n.user.name, user_path(n.user) %></td>
             <td><%= n.rating %></td>
             <td><%= n.tasting_notes %></td>
-            <td><%= link_to('Edit', edit_wine_note_url(@wine, n)) %></td>
+            <td><%= link_to 'Edit', edit_wine_note_url(@wine, n) %></td>
         </tr>
         <% end %>
     </tbody>
 </table>
 
 <ul>
-    <li><%= link_to('Edit Wine', edit_wine_path(@wine)) %></li>
-    <li><%= link_to('Add Note', new_wine_note_path(@wine)) %></li>
-    <li><%= link_to('Back to Wines', wines_path) %></li>
+    <li><%= link_to 'Edit Wine', edit_wine_path(@wine) %></li>
+    <li><%= link_to 'Add Note', new_wine_note_path(@wine) %></li>
+    <li><%= link_to 'Back to Wines', wines_path %></li>
 </ul>

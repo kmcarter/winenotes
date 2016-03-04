@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_notes
   before_action :set_user, only: [:show, :edit, :update]
   
   def index 
@@ -38,6 +39,10 @@ class UsersController < ApplicationController
   private
     def set_user
       @user = User.find(params[:id])
+    end
+    
+    def set_notes
+      @notes = Note.where(user_id: params[:id])
     end
     
     def user_params

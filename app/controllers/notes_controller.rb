@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
     before_action :set_wine
+    before_action :set_user
     before_action :set_note, only: [:edit, :update]
     
     def index
@@ -12,6 +13,7 @@ class NotesController < ApplicationController
     
     def create
         @note = @wine.notes.build(note_params)
+        @note.user_id = current_user.id
         if @note.save
             redirect_to [@wine], notice: 'Note successfully created.'
         else
@@ -38,6 +40,10 @@ class NotesController < ApplicationController
     
     def set_wine
         @wine = Wine.find(params[:wine_id])
+    end
+    
+    def set_user
+        @user = User.find(params[:user_id])
     end
     
     def set_note

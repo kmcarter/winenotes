@@ -5,14 +5,16 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
+      <th># of Notes</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
+        <td><%= link_to user.name, user_path(user) %></td>
         <td><%= user.email %></td>
+        <td><%= user.notes.count %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
       </tr>
     <% end %>
