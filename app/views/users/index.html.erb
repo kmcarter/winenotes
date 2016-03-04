@@ -3,8 +3,9 @@
 <table>
   <thead>
     <tr>
-      <td>Name</td>
-      <td>Email</td>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -12,6 +13,7 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
       </tr>
     <% end %>
   </tbody>
