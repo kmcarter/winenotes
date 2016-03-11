@@ -1,22 +1,30 @@
 <%= form_for @wine do |f| %>
+  <div class="row">
     <%= render 'shared/errors', object: @wine %>
-    <div class="field">
+    <div class="small-6 columns">
+      <div class="field">
         <%= f.label :name %>
         <%= f.text_field :name %>
-    </div>
-    <div class="field">
+      </div>
+      <div class="field">
         <%= f.label :varietal %>
         <%= f.select :varietal, WinesController::VARIETALS %>
+      </div>
     </div>
-    <div class="field">
+    <div class="small-6 columns">
+      <div class="field">
         <%= f.label :year %>
         <%= f.select :year, (1900..2016).to_a %>
-    </div>
-    <div class="field">
+      </div>
+      <div class="field">
         <%= f.label :vinyard %>
         <%= f.text_field :vinyard %>
+      </div>
     </div>
-    <div class="actions">
-        <%= f.submit %>
+    <div class="small-12 columns">
+      <div class="actions">
+        <%= f.submit class: "button" %>
+      </div>
     </div>
+  </div>
 <% end %>

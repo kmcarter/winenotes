@@ -1,18 +1,21 @@
-<h2><%= "#{pluralize(@notes.count, "note")}" %></h2>
-
-<table>
-    <thead>
+<div class="row">
+  <div class="small-12 columns">
+    <h2><%= "#{pluralize(@notes.count, "note")}" %></h2>
+    <table>
+      <thead>
         <th>User</th>
         <th>Rating</th>
         <th>Notes</th>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
         <% @notes.each do |n| %>
         <tr>
-            <td><%= n.user %></td>
-            <td><%= n.rating %></td>
-            <td><%= n.tasting_notes %></td>
+          <td><%= n.user %></td>
+          <td><%= n.rating %></td>
+          <td><%= n.tasting_notes %></td>
         </tr>
         <% end %>
-    </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+</div>

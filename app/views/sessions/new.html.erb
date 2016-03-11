@@ -1,17 +1,21 @@
-<h1>Sign In</h1>
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Sign In</h1>
 
-<%= form_tag sign_in_path do %>
-    <fieldset>
+    <%= form_tag sign_in_path do %>
+      <fieldset>
         <div class="field">
-            <%= label_tag :email %><br/>
-            <%= text_field_tag :email, params[:email] %>
+          <%= label_tag :email %><br/>
+          <%= text_field_tag :email, params[:email] %>
         </div>
         <div class="field">
-            <%= label_tag :password %><br/>
-            <%= password_field_tag :password %>
+          <%= label_tag :password %><br/>
+          <%= password_field_tag :password %>
         </div>
         <div class="actions">
-            <%= submit_tag "Sign In" %>
+          <%= submit_tag "Sign In", class: "button" %>
         </div>
-    </fieldset>
-<% end %>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

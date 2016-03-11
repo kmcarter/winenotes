@@ -1,24 +1,29 @@
-<%= "#{pluralize(@users.count, "user")}" %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th># of Notes</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to user.name, user_path(user) %></td>
-        <td><%= user.email %></td>
-        <td><%= user.notes.count %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<p><%= link_to('New User', new_user_path) %></p>
+<div class="row">
+  <div class="small-9 columns">
+    <%= "#{pluralize(@users.count, "user")}" %>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th># of Notes</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= link_to user.name, user_path(user) %></td>
+            <td><%= user.email %></td>
+            <td><%= user.notes.count %></td>
+            <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="small-3 columns">
+    <p><%= link_to('New User', new_user_path) %></p>
+  </div>
+</div>

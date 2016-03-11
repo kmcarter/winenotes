@@ -12,6 +12,6 @@ class SessionsController < ApplicationController
   
   def destroy
     reset_session
-    redirect_to landing_path, notice: "You have been signed out of the application!"
+    redirect_to sign_in_path, notice: "You have been signed out of the application! You can sign in again below."
   end
 end

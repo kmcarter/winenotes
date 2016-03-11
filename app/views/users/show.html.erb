@@ -1,15 +1,17 @@
-<h1><%= @user.name %></h1>
-<p><%= @user.email %></p>
-
-<h2><%= "#{pluralize(@notes.count, "note")}" %></h2>
-<table>
-    <thead>
+<div class="row">
+  <div class="small-9 columns">
+    <h1><%= @user.name %></h1>
+    <p><%= @user.email %></p>
+    
+    <h2><%= "#{pluralize(@notes.count, "note")}" %></h2>
+    <table>
+      <thead>
         <th>Wine</th>
         <th>Rating</th>
         <th>Notes</th>
         <th></th>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
         <% @notes.each do |n| %>
         <tr>
             <td>
@@ -21,7 +23,10 @@
             <td><%= link_to('Edit', edit_wine_note_url(n.wine_id, n)) %></td>
         </tr>
         <% end %>
-    </tbody>
-</table>
-
-<p><%= link_to('Edit User', edit_user_path(@user)) %></p>
+      </tbody>
+    </table>
+  </div>
+  <div class="small-3 columns">
+    <p><%= link_to('Edit User', edit_user_path(@user)) %></p>
+  </div>
+</div>

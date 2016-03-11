@@ -1,17 +1,19 @@
-<%= content_tag(:h1, @wine.name) %>
-<%= content_tag(:p, @wine.varietal) %>
-<%= content_tag(:p, @wine.year) %>
-<%= content_tag(:p, @wine.vinyard) %>
-
-<h2><%= "#{pluralize(@notes.count, "note")}" %></h2>
-<table>
-    <thead>
+<div class="row">
+  <div class="small-9 columns">
+    <%= content_tag(:h1, @wine.name) %>
+    <%= content_tag(:p, @wine.varietal) %>
+    <%= content_tag(:p, @wine.year) %>
+    <%= content_tag(:p, @wine.vinyard) %>
+    
+    <h2><%= "#{pluralize(@notes.count, "note")}" %></h2>
+    <table>
+      <thead>
         <th>Author</th>
         <th>Rating</th>
         <th>Notes</th>
         <th></th>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
         <% @notes.each do |n| %>
         <tr>
             <td><%= link_to n.user.name, user_path(n.user) %></td>
@@ -20,11 +22,14 @@
             <td><%= link_to 'Edit', edit_wine_note_url(@wine, n) %></td>
         </tr>
         <% end %>
-    </tbody>
-</table>
-
-<ul>
-    <li><%= link_to 'Edit Wine', edit_wine_path(@wine) %></li>
-    <li><%= link_to 'Add Note', new_wine_note_path(@wine) %></li>
-    <li><%= link_to 'Back to Wines', wines_path %></li>
-</ul>
+      </tbody>
+    </table>
+  </div>
+  <div class="small-3 columns">
+    <ul>
+      <li><%= link_to 'Edit Wine', edit_wine_path(@wine) %></li>
+      <li><%= link_to 'Add Note', new_wine_note_path(@wine) %></li>
+      <li><%= link_to 'Back to Wines', wines_path %></li>
+    </ul>
+  </div>
+</div>
