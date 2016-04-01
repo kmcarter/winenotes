@@ -29,6 +29,7 @@ gem 'faker'
 gem 'bcrypt'
 gem 'email_validator'
 gem 'warden'
+gem 'gravtastic'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

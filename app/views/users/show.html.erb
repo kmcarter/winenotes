@@ -1,7 +1,14 @@
 <div class="row">
   <div class="large-9 columns">
-    <h1><%= @user.name %></h1>
-    <p><%= @user.email %></p>
+    <div class="row">
+      <div class="medium-3 columns">
+        <%= image_tag @user.gravatar_url(size: 350) %>
+      </div>
+      <div class="medium-9 columns">
+        <h1><%= @user.name %></h1>
+        <p><%= @user.email %></p>
+      </div>
+    </div>
     
     <h2><%= "#{pluralize(@notes.count, "note")}" %></h2>
     <table>
