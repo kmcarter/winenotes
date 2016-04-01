@@ -1,9 +1,16 @@
 <div class="row">
-  <div class="small-9 columns">
-    <%= content_tag(:h1, @wine.name) %>
-    <%= content_tag(:p, @wine.varietal) %>
-    <%= content_tag(:p, @wine.year) %>
-    <%= content_tag(:p, @wine.vinyard) %>
+  <div class="large-9 columns">
+    <div class="row">
+      <div class="small-3 columns">
+        <img src="//placehold.it/350x350" alt="<%= @wine.name %>" />
+      </div>
+      <div class="small-9 columns">
+        <%= content_tag(:h1, @wine.name) %>
+        <%= content_tag(:p, @wine.varietal) %>
+        <%= content_tag(:p, @wine.year) %>
+        <%= content_tag(:p, @wine.vinyard) %>
+      </div>
+    </div>
     
     <h2><%= "#{pluralize(@notes.count, "note")}" %></h2>
     <table>
@@ -25,7 +32,7 @@
       </tbody>
     </table>
   </div>
-  <div class="small-3 columns">
+  <div class="large-3 columns">
     <ul>
       <li><%= link_to 'Edit Wine', edit_wine_path(@wine) %></li>
       <li><%= link_to 'Add Note', new_wine_note_path(@wine) %></li>
