@@ -7,6 +7,7 @@ class WinesController < ApplicationController
     
     def index
         @wines = Wine.all
+        @wine = Wine.new
     end
     
     def new
@@ -22,6 +23,7 @@ class WinesController < ApplicationController
     
     def show
         @notes = @wine.notes.all
+        @note = Note.new
     end
     
     def edit

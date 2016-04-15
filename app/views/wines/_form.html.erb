@@ -1,7 +1,7 @@
 <%= form_for @wine do |f| %>
   <div class="row">
     <%= render 'shared/errors', object: @wine %>
-    <div class="small-6 columns">
+    <div class="small-12 columns">
       <div class="field">
         <%= f.label :name %>
         <%= f.text_field :name %>
@@ -10,8 +10,6 @@
         <%= f.label :varietal %>
         <%= f.select :varietal, WinesController::VARIETALS %>
       </div>
-    </div>
-    <div class="small-6 columns">
       <div class="field">
         <%= f.label :year %>
         <%= f.select :year, (1900..2016).to_a %>

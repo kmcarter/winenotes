@@ -35,8 +35,9 @@
   <div class="large-3 columns">
     <ul>
       <li><%= link_to 'Edit Wine', edit_wine_path(@wine) %></li>
-      <li><%= link_to 'Add Note', new_wine_note_path(@wine) %></li>
       <li><%= link_to 'Back to Wines', wines_path %></li>
     </ul>
+    <h3>Create New Note</h3>
+    <%= render 'notes/form' %>
   </div>
 </div>

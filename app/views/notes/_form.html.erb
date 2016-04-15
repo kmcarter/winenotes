@@ -1,20 +1,17 @@
 <%= form_for([@wine, @note]) do |f| %>
   <div class="row">
     <%= render 'shared/errors', object: @note %>
-    <div class="small-6 columns">
+    <div class="small-12 columns">
       <div class="field">
         <%= f.label :rating %>
         <%= f.range_field :rating, in: 0..5 %>
       </div>
-    </div>
-    <div class="small-6 columns">
       <div class="field">
         <%= f.label :tasting_notes %>
         <%= f.text_area :tasting_notes %>
       </div>
     </div>
-    <div class="small-12 columns">
-    <div class="actions">
+    <div class="small-12 columns actions">
       <%= f.submit class: "button" %>
     </div>
   </div>
