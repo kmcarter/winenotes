@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   
   def new
     flash.now[:alert] = warden.message if warden.message.present?
+    @user = User.new
   end
   
   def create

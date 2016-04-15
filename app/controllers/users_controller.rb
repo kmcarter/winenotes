@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_notes
   before_action :set_user, only: [:show, :edit, :update]
+  skip_before_action :authorize, only: [:new, :create]
   
   def index 
     @users = User.all
@@ -13,8 +14,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      UserMailer.thank_you(@user).deliver_now
-      redirect_to @user, notice: 'User successfully created.'
+      if current_user.nil?
+        UserMailer.thank_you(@user).deliver_now
+        #sign_in(@user)
+        #redirect_to @user, notice: "Welcome! Your account has been successfully created."
+        redirect_to sign_in_path, notice: 'Welcome! Your account has been successfully created. Please login below.'
+      else
+        redirect_to @user, notice: 'User successfully created.'
+      end
     else
       flash.now[:alert] = 'User was not created.'
       render :new
