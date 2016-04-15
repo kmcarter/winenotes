@@ -11,7 +11,14 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require dataTables/extras/dataTables.responsive
+ *= require dataTables/jquery.dataTables.foundation
+ *= require dataTables/extras/dataTables.tableTools
  *= require_self
  *= require foundation_and_overrides
 
  */
+
+#wines_wrapper.dataTables_wrapper select[name=wines_length] {
+  width: auto;
+}

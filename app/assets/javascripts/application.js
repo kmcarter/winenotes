@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
+//= require dataTables/extras/dataTables.tableTools
+//= require dataTables/jquery.dataTables.foundation
+//= require dataTables/extras/dataTables.responsive
 //= require foundation
 //= require_tree .
 
