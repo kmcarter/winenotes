@@ -18,6 +18,6 @@ RSpec.feature 'Editing an existing wine', type: :feature do
     click_button 'Update Wine'
     
     expect(current_path).to eq(wine_path(wine))
-    expect(page).to have_content('Test Wine - updated')
+    expect(page).to have_content('Wine successfully updated.')
   end
 end

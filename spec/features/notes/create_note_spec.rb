@@ -10,9 +10,6 @@ RSpec.feature 'Creating a new note', type: :feature do
     wine = FactoryGirl.create(:wine)
     
     visit wine_url(wine)
-    click_link 'Add Note'
-    
-    expect(current_path).to eq(new_wine_note_path(wine))
     
     #since we're pretending we're a user, we don't want to generate random data
     fill_in 'note_rating', with: '3'

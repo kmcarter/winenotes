@@ -9,9 +9,6 @@ RSpec.feature 'Creating a new user', type: :feature do
   scenario 'succeeds with valid values' do 
     User.where(email: 'test@test.com').delete_all
     visit '/users'
-    click_link 'New User' 
-    
-    expect(current_url).to eq(new_user_url)
     
     fill_in 'user_name', with: 'Test User' 
     fill_in 'user_email', with: 'test@test.com'
@@ -27,7 +24,6 @@ RSpec.feature 'Creating a new user', type: :feature do
   
   it "does not save the user if it's invalid" do
     visit '/users'
-    click_link 'New User'
     
     expect { 
       click_button 'Create User'
