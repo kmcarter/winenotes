@@ -14,12 +14,7 @@
       </div>
       <div class="top-bar-right">
         <ul class="menu">
-          <% if current_user %>
-            <li>Signed in as <%= current_user.email %></li>
-            <li><%= link_to 'Sign Out', sign_out_path %></li>
-          <% elsif %>
-            <li><%= link_to 'Sign In', sign_in_path %></li>
-          <% end %>
+          <%= render 'layouts/user_area' %>
         </ul>
       </div>
     </div>

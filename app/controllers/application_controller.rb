@@ -6,9 +6,23 @@ class ApplicationController < ActionController::Base
   
   private
     def current_user
-      warden.user
+      if warden.user
+        warden.user
+      else 
+        OpenStruct.new(name: "Guest")
+      end
     end
     helper_method :current_user
+    
+    def user_links
+      if warden.user
+        [OpenStruct.new(name: 'Sign Out', target: sign_out_path)]
+      else
+        [OpenStruct.new(name: 'Sign In', target: sign_in_path),
+        OpenStruct.new(name: 'Sign Up', target: new_user_path)]
+      end
+    end
+    helper_method :user_links
     
     def authorize
       redirect_to sign_in_url, alert: "You must be signed in to use this application." if current_user.nil?
