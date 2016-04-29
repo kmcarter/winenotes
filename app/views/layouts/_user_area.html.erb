@@ -1,7 +1,7 @@
 <li>
   Welcome
   <% if current_user.name != "Guest" %>
-    <%= link_to(image_tag(current_user.gravatar_url(size: 20)), user_path(current_user)) %>
+    <%= link_to(image_tag(current_user.gravatar_url(size: 20)), user_path(current_user), class: "avatar") %>
   <% end %> 
   <%= current_user.name %>
 </li>

@@ -22,3 +22,8 @@
 #wines_wrapper.dataTables_wrapper select[name=wines_length] {
   width: auto;
 }
+
+.menu > li > .avatar {
+  display: inline;
+  padding: 0 0 0 4px;
+}
