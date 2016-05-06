@@ -8,8 +8,6 @@ class ApplicationController < ActionController::Base
     def current_user
       if warden.user
         warden.user
-      else 
-        OpenStruct.new(name: "Guest")
       end
     end
     helper_method :current_user

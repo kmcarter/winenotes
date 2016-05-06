@@ -23,7 +23,7 @@
   width: auto;
 }
 
-.menu > li > .avatar {
+.menu > li > .inline {
   display: inline;
   padding: 0 0 0 4px;
 }

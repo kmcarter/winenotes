@@ -1,9 +1,11 @@
 <li>
   Welcome
-  <% if current_user.name != "Guest" %>
-    <%= link_to(image_tag(current_user.gravatar_url(size: 20)), user_path(current_user), class: "avatar") %>
-  <% end %> 
-  <%= current_user.name %>
+  <% if current_user.nil? %>
+    Guest
+  <% else %>
+    <%= link_to(image_tag(current_user.gravatar_url(size: 20)), user_path(current_user), class: "inline") %>
+    <%= link_to(current_user.name, user_path(current_user), class: "inline") %>
+  <% end %>
 </li>
 <% user_links.each do |link| %>
   <li><%= link_to link.name, link.target %></li>
