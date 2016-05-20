@@ -16,7 +16,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       if current_user.nil?
-        UserMailer.thank_you(@user).deliver_now
+        #UserMailer.thank_you(@user).deliver_now
+        UserMailer.test_email(@user.email).deliver_later
+        
         #sign_in(@user)
         #redirect_to @user, notice: "Welcome! Your account has been successfully created."
         redirect_to sign_in_path, notice: 'Welcome! Your account has been successfully created. Please login below.'
