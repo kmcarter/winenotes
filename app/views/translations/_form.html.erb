@@ -1,0 +1,24 @@
+<h2>Add Translation</h2>
+<%= form_tag translations_path do %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="field">
+       <%= label_tag :locale %>
+       <%= text_field_tag :locale, I18n.locale, { readonly: true } %>
+      </div>
+      <div class="field">
+        <%= label_tag :key %>
+        <%= text_field_tag :key %>
+      </div>
+      <div class="field">
+        <%= label_tag :value %>
+        <%= text_field_tag :value %>
+      </div>
+    </div>
+    <div class="small-12 columns">
+      <div class="actions">
+        <%= submit_tag "Submit" %>
+      </div>
+    </div>
+  </div>
+<% end %>

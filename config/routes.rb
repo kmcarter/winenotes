@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :notes, only: [:new, :create, :edit, :update]
     end
     resources :users, only: [:index, :new, :create, :show, :edit, :update]
+    resources :translations, only: [:index, :create]
     
     root to: 'home#index'
   end
