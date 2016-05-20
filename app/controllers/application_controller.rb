@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :authorize
+  before_action :set_locale
+  
+  def default_url_options(options = {})
+    { locale: I18n.locale }
+  end
   
   private
     def current_user
@@ -28,5 +33,9 @@ class ApplicationController < ActionController::Base
     
     def warden
       env['warden']
+    end
+    
+    def set_locale
+      I18n.locale = params[:locale] if params[:locale].present?
     end
 end

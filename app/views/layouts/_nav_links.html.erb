@@ -1,2 +1,4 @@
-<li><%= link_to('Wines', wines_path) %></li>
+<li><%= link_to(t('wines.index.title'), wines_path) %></li>
 <li><%= link_to('Users', users_path) %></li>
+<li><%= link_to_unless_current("English", { locale: 'en' }, { class: "button" }) %></li>
+<li><%= link_to_unless_current("French", { locale: 'fr' }, { class: "button" }) %></li>

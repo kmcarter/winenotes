@@ -1,7 +1,7 @@
 <li>
   Welcome
   <% if current_user.nil? %>
-    Guest
+    <%= t("guest") %>
   <% else %>
     <%= link_to(image_tag(current_user.gravatar_url(size: 20)), user_path(current_user), class: "inline") %>
     <%= link_to(current_user.name, user_path(current_user), class: "inline") %>

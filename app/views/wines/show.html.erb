@@ -15,9 +15,10 @@
     <h2><%= "#{pluralize(@notes.count, "note")}" %></h2>
     <table>
       <thead>
-        <th>Author</th>
-        <th>Rating</th>
-        <th>Notes</th>
+        <th><%= Note.human_attribute_name(:author) %></th>
+        <th><%= Note.human_attribute_name(:rating) %></th>
+        <th><%= Note.human_attribute_name(:tasting_notes) %></th>
+        <th><%= Note.human_attribute_name(:created_at) %></th>
         <th></th>
       </thead>
       <tbody>
@@ -26,6 +27,7 @@
             <td><%= link_to n.user.name, user_path(n.user) %></td>
             <td><%= n.rating %></td>
             <td><%= n.tasting_notes %></td>
+            <td><%= time_ago_in_words(n.created_at) %></td>
             <td><%= link_to 'Edit', edit_wine_note_url(@wine, n) %></td>
         </tr>
         <% end %>

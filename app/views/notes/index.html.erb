@@ -3,9 +3,10 @@
     <h2><%= "#{pluralize(@notes.count, "note")}" %></h2>
     <table>
       <thead>
-        <th>User</th>
-        <th>Rating</th>
-        <th>Notes</th>
+        <th><%= Note.human_attribute_name(:author) %></th>
+        <th><%= Note.human_attribute_name(:rating) %></th>
+        <th><%= Note.human_attribute_name(:tasting_notes) %></th>
+        <th><%= Note.human_attribute_name(:created_at) %></th>
       </thead>
       <tbody>
         <% @notes.each do |n| %>
@@ -13,6 +14,7 @@
           <td><%= n.user %></td>
           <td><%= n.rating %></td>
           <td><%= n.tasting_notes %></td>
+          <td><%= time_ago_in_words(n.created_at) %></td>
         </tr>
         <% end %>
       </tbody>

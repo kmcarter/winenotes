@@ -1,0 +1,35 @@
+fr:
+  guest: "Client"
+  wines:
+    create:
+      title: "Créer un nouveau vin"
+    index:
+      title: "Vins"
+      subtitle: " dans la base de données"
+  notes:
+    create:
+      title: "Créer une nouvelle note"
+    index:
+      title: "Notes"
+  activerecord:
+    attributes:
+      wine:
+        name: "Nom"
+        varietal: "Variétale"
+        year: "An"
+        vinyard: "Vignoble"
+      note:
+        rating: "Évaluation"
+        tasting_notes: "Notes"
+        created_at: "Créé"
+        author: "Auteur"
+        count: "# De notes"
+  datetime:
+    distance_in_words:
+      less_than_x_minutes: "Juste maintenant"
+      x_minutes: "il y a %{count} minutes"
+      x_hours: "il y a %{count} heures"
+      x_days: "il y a %{count} jours"
+      x_weeks: "%{count} semaines plus tôt"
+      x_months: "il y a %{count} mois"
+      x_years: "il y a %{count} ans"

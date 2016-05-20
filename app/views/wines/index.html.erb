@@ -1,13 +1,15 @@
 <div class="row">
   <div class="medium-9 columns">
+    <h1><%= t('.title') %></h1>
+    <h4><%= "#{pluralize(@wines.count, 'wine')} #{t('.subtitle')}" %></h4>
     <table id="wines" class="display responsive no-wrap">
       <thead>
         <th></th>
-        <th>Name</th>
-        <th>Varietal</th>
-        <th>Year</th>
-        <th>Vinyard</th>
-        <th># of Notes</th>
+        <th><%= Wine.human_attribute_name(:name) %></th>
+        <th><%= Wine.human_attribute_name(:varietal) %></th>
+        <th><%= Wine.human_attribute_name(:year) %></th>
+        <th><%= Wine.human_attribute_name(:vinyard) %></th>
+        <th><%= Note.human_attribute_name(:count) %></th>
         <th></th>
       </thead>
       <tbody>
@@ -26,7 +28,7 @@
     </table>
   </div>
   <div class="medium-3 columns">
-    <h3>Create New Wine</h3>
+    <h3><%= t('wines.create.title') %></h3>
     <%= render 'form' %>
   </div>
 </div>
